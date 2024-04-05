@@ -1,0 +1,1 @@
+import{g as e,o}from"./index-4PJshrKj.js";const m={__name:"index",setup(c){return console.log("https://mock.mengxuegu.com/mock/63218b5fb4c53348ed2bc212/api/v1"),(t,n)=>(o(),e("div"))}};export{m as default};
