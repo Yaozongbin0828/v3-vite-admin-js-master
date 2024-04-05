@@ -38,6 +38,9 @@ dependencies:
   sass:
     specifier: '1.61'
     version: 1.61.0
+  screenfull:
+    specifier: ^6.0.2
+    version: 6.0.2
   unocss:
     specifier: 0.59.0-beta.1
     version: 0.59.0-beta.1(postcss@8.4.38)(vite@5.2.3)
@@ -2752,6 +2755,11 @@ packages:
       chokidar: 3.6.0
       immutable: 4.3.5
       source-map-js: 1.2.0
+
+  /screenfull@6.0.2:
+    resolution: {integrity: sha512-AQdy8s4WhNvUZ6P8F6PB21tSPIYKniic+Ogx0AacBMjKP1GUHN2E9URxQHtCusiwxudnCKkdy4GrHXPPJSkCCw==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+    dev: false
 
   /semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}

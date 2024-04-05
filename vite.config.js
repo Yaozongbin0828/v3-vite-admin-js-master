@@ -14,6 +14,7 @@ import UnoCss from "unocss/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  /** 设置路径 方便部署到Github Page*/
   base: "/v3-vite-admin-js-master/",
   build: {
     outDir: "docs",

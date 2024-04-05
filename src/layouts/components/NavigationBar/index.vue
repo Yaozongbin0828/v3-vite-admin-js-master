@@ -11,6 +11,7 @@
     <!-- 右边组件 -->
     <div class="right-menu">
       <!-- Screenfull 全屏-->
+      <Screenfull/>
       <!-- ThemeSwitch 主题切换 -->
       <!-- Notify 通知 -->
       <el-dropdown class="right-menu-item">
@@ -49,6 +50,7 @@ import { useUserStore } from "@/store/modules/user";
 
 import Breadcrumb from "../Breadcrumb/index.vue";
 import Hamburger from "../Hamburger/index.vue";
+import Screenfull from "@/components/Screenfull/index.vue"
 
 const appStore = useAppStore();
 const userStore = useUserStore();
