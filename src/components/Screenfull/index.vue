@@ -66,6 +66,10 @@ onUnmounted(() => {
 .svg-icon {
   font-size: 20px;
   cursor: pointer;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 15px 0 0;
+
   &:focus {
     outline: none;
   }

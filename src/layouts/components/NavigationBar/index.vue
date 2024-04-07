@@ -14,6 +14,7 @@
       <Screenfull />
       <!-- ThemeSwitch 主题切换 -->
       <!-- Notify 通知 -->
+      <Notify />
       <el-dropdown class="right-menu-item">
         <!-- 用户名 头像 -->
         <div class="right-menu-avatar">
@@ -51,6 +52,7 @@ import { useUserStore } from "@/store/modules/user";
 import Breadcrumb from "../Breadcrumb/index.vue";
 import Hamburger from "../Hamburger/index.vue";
 import Screenfull from "@/components/Screenfull/index.vue";
+import Notify from "@/components/Notify/index.vue";
 
 const appStore = useAppStore();
 const userStore = useUserStore();

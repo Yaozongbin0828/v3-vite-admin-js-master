@@ -1,7 +1,5 @@
-echo "# v3-vite-admin-js-master" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/yaozongbin/v3-vite-admin-js-master.git
+git clone https://github.com/yaozongbin/v3-vite-admin-js-master.git
+cd v3-vite-admin-js-master
+git add .
+git commit -m "commit"
 git push -u origin main

@@ -193,12 +193,40 @@ export const constantRoutes = [
     ],
   },
 
-  // error-page
+  // ErrorPage
   {
-    path: "/error-page",
+    path: "/ErrorPage",
+    meta: {
+      title: "异常页",
+      svgIcon: "error",
+    },
+    children: [
+      {
+        //404
+        path: "/404",
+        component: () => import("@/views/error-page/404.vue"),
+        name: "404",
+        meta: {
+          title: "404",
+          svgIcon: "404",
+        },
+      },
+      // 403
+      {
+        path: "/403",
+        component: () => import("@/views/error-page/403.vue"),
+        name: "403",
+        meta: {
+          title: "403",
+          svgIcon: "403",
+        },
+      },
+      // 500
+    ],
   },
 ];
 
+/** 权限页面路由*/
 export const asyncRoutes = [
   {
     path: "/permission",

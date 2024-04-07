@@ -102,6 +102,7 @@ export const useUserStore = defineStore("user", () => {
 });
 
 /** 在 setup 外使用 */
+/** 弊端是不能持久化*/
 export function useUserStoreHook() {
   return useUserStore(store);
 }
