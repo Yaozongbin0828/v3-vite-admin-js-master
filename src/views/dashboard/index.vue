@@ -1,8 +1,17 @@
+<script setup>
+import Echarts from "./components/Echarts.vue";
+/** api/v1 */
+console.log(import.meta.env.VITE_BASE_API);
+</script>
 <template>
-    <div></div>
+  <div class="chart">
+    <Echarts />
+  </div>
 </template>
 
-<script setup>
-console.log(import.meta.env.VITE_BASE_API)
-</script>
-<style scoped></style>
+<style lang="scss">
+.chart {
+  width: 500px;
+  height: 500px;
+}
+</style>
