@@ -31,7 +31,6 @@ const key = computed(() => {
 <style lang="scss" scoped>
 @import "@/styles/mixins.scss";
 
-
 .fixed-header + .app-main {
   padding-top: var(--v3-navigationbar-height);
   height: 100vh;

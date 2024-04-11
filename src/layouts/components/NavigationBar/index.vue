@@ -27,15 +27,10 @@
               <el-dropdown-item>个人博客</el-dropdown-item>
             </a>
             <a target="_blank" href="https://github.com/yaozongbin">
-              <el-dropdown-item>
-                <svg class="svg-icon" aria-hidden="true">
-                  <use :href="symbolId" />
-                  GitHub
-                </svg>
-              </el-dropdown-item>
+              <el-dropdown-item> github </el-dropdown-item>
             </a>
             <a target="_blank" href="https://gitee.com/yaozongbin">
-              <el-dropdown-item>Gitee</el-dropdown-item>
+              <el-dropdown-item> Gitee </el-dropdown-item>
             </a>
             <el-dropdown-item divided @click="logout">
               <span style="display: block">退出登录</span>
@@ -118,6 +113,9 @@ const logout = () => {
       .right-menu-avatar {
         display: flex;
         align-items: center;
+        .svg-icon {
+          font-size: 20px;
+        }
 
         .el-avatar {
           margin-right: 10px;

@@ -1,21 +1,22 @@
 <script setup>
-import { ref, onMounted } from "vue";
 import * as echarts from "echarts/core";
 import {
   TooltipComponent,
   GridComponent,
   LegendComponent,
-
+  ToolboxComponent,
 } from "echarts/components";
-import { BarChart, LineChart, PieChart } from "echarts/charts";
+import { BarChart, LineChart, PieChart, RadarChart } from "echarts/charts";
 import { UniversalTransition } from "echarts/features";
 import { CanvasRenderer } from "echarts/renderers";
 import VChart from "vue-echarts";
 
 echarts.use([
   TooltipComponent,
+  ToolboxComponent,
   GridComponent,
   LegendComponent,
+  RadarChart,
   BarChart,
   LineChart,
   CanvasRenderer,
@@ -70,7 +71,7 @@ const skillsOption = {
   ],
 };
 
-/** 趋势 柱状图*/
+/** 面积图*/
 const trendOption = {
   color: ["#80FFA5", "#00DDFF", "#37A2FF", "#FF0087", "#FFBF00"],
   tooltip: {
@@ -250,33 +251,177 @@ const trendOption = {
     },
   ],
 };
+
+/** 柱状图*/
+const histogramOption = {
+  tooltip: {
+    trigger: "axis",
+    axisPointer: {
+      type: "shadow",
+    },
+  },
+  legend: {},
+  grid: {
+    left: "3%",
+    right: "4%",
+    bottom: "3%",
+    containLabel: true,
+  },
+  xAxis: [
+    {
+      type: "category",
+      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    },
+  ],
+  yAxis: [
+    {
+      type: "value",
+    },
+  ],
+  series: [
+    {
+      name: "Direct",
+      type: "bar",
+      emphasis: {
+        focus: "series",
+      },
+      data: [320, 332, 301, 334, 390, 330, 320],
+    },
+    {
+      name: "Email",
+      type: "bar",
+      stack: "Ad",
+      emphasis: {
+        focus: "series",
+      },
+      data: [120, 132, 101, 134, 90, 230, 210],
+    },
+    {
+      name: "Union Ads",
+      type: "bar",
+      stack: "Ad",
+      emphasis: {
+        focus: "series",
+      },
+      data: [220, 182, 191, 234, 290, 330, 310],
+    },
+    {
+      name: "Video Ads",
+      type: "bar",
+      stack: "Ad",
+      emphasis: {
+        focus: "series",
+      },
+      data: [150, 232, 201, 154, 190, 330, 410],
+    },
+    {
+      name: "Search Engine",
+      type: "bar",
+      data: [862, 1018, 964, 1026, 1679, 1600, 1570],
+      emphasis: {
+        focus: "series",
+      },
+      markLine: {
+        lineStyle: {
+          type: "dashed",
+        },
+        data: [[{ type: "min" }, { type: "max" }]],
+      },
+    },
+    {
+      name: "Baidu",
+      type: "bar",
+      barWidth: 5,
+      stack: "Search Engine",
+      emphasis: {
+        focus: "series",
+      },
+      data: [620, 732, 701, 734, 1090, 1130, 1120],
+    },
+    {
+      name: "Google",
+      type: "bar",
+      stack: "Search Engine",
+      emphasis: {
+        focus: "series",
+      },
+      data: [120, 132, 101, 134, 290, 230, 220],
+    },
+    {
+      name: "Bing",
+      type: "bar",
+      stack: "Search Engine",
+      emphasis: {
+        focus: "series",
+      },
+      data: [60, 72, 71, 74, 190, 130, 110],
+    },
+    {
+      name: "Others",
+      type: "bar",
+      stack: "Search Engine",
+      emphasis: {
+        focus: "series",
+      },
+      data: [62, 82, 91, 84, 109, 110, 120],
+    },
+  ],
+};
 </script>
 <template>
   <div class="echarts-container">
-    <el-card class="m-10" shadow="always">
-      <template #header>技术栈</template>
-      <VChart :option="skillsOption" class="wh-full" autoresize="true" />
-    </el-card>
-    <el-card class="m-10" shadow="always">
-      <template #header>趋势</template>
-      <VChart :option="trendOption" class="wh-full" autoresize="true" />
-    </el-card>
-    <el-card class="m-10" shadow="always">
-      <template #header>技术栈</template>
-      <VChart :option="skillsOption" autoresize="true" />
-    </el-card>
+    <div class="echarts-container-item">
+      <el-card class="m-10 mr-5 card_skills" shadow="always">
+        <template #header>技术栈</template>
+        <VChart :option="skillsOption" class="wh-full" autoresize />
+      </el-card>
+      <el-card class="m-10 mr-5 card_histogram" shadow="always">
+        <template #header>柱状图</template>
+        <VChart :option="histogramOption" class="wh-full" autoresize />
+      </el-card>
+    </div>
+    <div class="echarts-container-item">
+      <el-card class="m-10 card_trend" shadow="always">
+        <template #header>折线图</template>
+        <VChart :option="trendOption" class="wh-full" autoresize />
+      </el-card>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .echarts-container {
-  box-sizing: border-box;
-  .m-10 {
-    margin: 0 0 10px 0;
+  .echarts-container-item {
+    box-sizing: border-box;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .card_skills,
+    .card_trend {
+      flex: 1;
+    }
+    .card_histogram {
+      flex: 2;
+    }
+    .m-10 {
+      margin: 0 0 10px 0;
+    }
+
+    .mr-5 {
+      margin-right: 5px;
+    }
+
+    .wh-full {
+      height: 400px;
+    }
   }
 
-  .wh-full {
-    height: 400px;
+  @media screen and (max-width: 768px) {
+    .echarts-container-item {
+      display: block;
+    }
   }
 }
 </style>

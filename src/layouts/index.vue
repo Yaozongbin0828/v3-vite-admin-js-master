@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { useAppStore, DeviceType } from "@/store/modules/app";
 import { useSettingsStore } from "@/store/modules/settings";
-import { AppMain, NavigationBar, Sidebar } from "./components";
+import { AppMain, NavigationBar, Sidebar, TagsView } from "./components";
 import useResize from "./hooks/useResize";
 import Footer from "./components/Footer/index.vue";
 
@@ -46,6 +46,7 @@ const handleClickOutside = () => {
     <div class="main-container">
       <div :class="{ 'fixed-header': fixedHeader }">
         <NavigationBar />
+        <TagsView />
       </div>
       <AppMain />
       <!-- 页脚 -->

@@ -13,5 +13,6 @@ console.log(import.meta.env.VITE_BASE_API);
 .chart {
   width: 100%;
   height: 100%;
+  margin-top: 30px;
 }
 </style>
