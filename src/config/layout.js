@@ -21,15 +21,16 @@
 // }
 
 const layoutSettings = {
-    showSettings: true,
-    showTagsView: true,
-    fixedHeader: true,
-    showSidebarLogo: true,
-    showNotify: true,
-    showThemeSwitch: true,
-    showScreenfull: true,
-    showGreyMode: false,
-    showColorWeakness: false
-}
+  showSettings: true,
+  showTagsView: true,
+  fixedHeader: true,
+  fixedFooter: true,
+  showSidebarLogo: true,
+  showNotify: true,
+  showThemeSwitch: true,
+  showScreenfull: true,
+  showGreyMode: false,
+  showColorWeakness: false,
+};
 
-export default layoutSettings
+export default layoutSettings;

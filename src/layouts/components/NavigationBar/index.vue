@@ -27,7 +27,12 @@
               <el-dropdown-item>个人博客</el-dropdown-item>
             </a>
             <a target="_blank" href="https://github.com/yaozongbin">
-              <el-dropdown-item>GitHub</el-dropdown-item>
+              <el-dropdown-item>
+                <svg class="svg-icon" aria-hidden="true">
+                  <use :href="symbolId" />
+                  GitHub
+                </svg>
+              </el-dropdown-item>
             </a>
             <a target="_blank" href="https://gitee.com/yaozongbin">
               <el-dropdown-item>Gitee</el-dropdown-item>

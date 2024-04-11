@@ -1,7 +1,6 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-import Footer from "./Footer/index.vue";
 // import { useTagsViewStore } from "@/store/modules/tags-view"
 
 const route = useRoute();
@@ -23,8 +22,6 @@ const key = computed(() => {
           </keep-alive>
         </transition>
       </router-view>
-      <!-- 页脚 -->
-      <Footer />
     </div>
     <!-- 返回顶部 -->
     <el-backtop />
@@ -34,22 +31,23 @@ const key = computed(() => {
 <style lang="scss" scoped>
 @import "@/styles/mixins.scss";
 
+
 .fixed-header + .app-main {
   padding-top: var(--v3-navigationbar-height);
   height: 100vh;
-  // overflow: auto;
+  overflow: auto;
 }
 
 .app-main {
   min-height: calc(100vh - var(--v3-navigationbar-height));
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   background-color: var(--v3-body-bg-color);
 
   .app-scrollabr {
     flex-grow: 1;
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     flex-direction: column;
     height: 100%;

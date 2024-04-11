@@ -4,6 +4,7 @@ import { useAppStore, DeviceType } from "@/store/modules/app";
 import { useSettingsStore } from "@/store/modules/settings";
 import { AppMain, NavigationBar, Sidebar } from "./components";
 import useResize from "./hooks/useResize";
+import Footer from "./components/Footer/index.vue";
 
 const appStore = useAppStore();
 const settingsStore = useSettingsStore();
@@ -20,10 +21,15 @@ const classObj = computed(() => {
   };
 });
 
+/** 固定顶部*/
 const fixedHeader = computed(() => {
   return settingsStore.fixedHeader;
 });
 
+/** 固定页脚*/
+const fixedFooter = computed(() => {
+  return settingsStore.fixedHeader;
+});
 const handleClickOutside = () => {
   appStore.closeSidebar(false);
 };
@@ -42,12 +48,13 @@ const handleClickOutside = () => {
         <NavigationBar />
       </div>
       <AppMain />
+      <!-- 页脚 -->
+      <Footer :class="{ 'fixed-footer': fixedFooter }" />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-
 @import "@/styles/mixins.scss";
 
 .app-wrapper {
@@ -104,6 +111,16 @@ const handleClickOutside = () => {
   transition: width 0.28s;
 }
 
+/** 固定页脚*/
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 9;
+  right: 0;
+  width: calc(100% - var(--v3-sidebar-width));
+  transition: width 0.28s;
+}
+
 .hideSidebar {
   .main-container {
     margin-left: var(--v3-sidebar-hide-width);
@@ -116,6 +133,10 @@ const handleClickOutside = () => {
   .fixed-header {
     width: calc(100% - var(--v3-sidebar-hide-width));
   }
+}
+
+.fixed-footer {
+  width: calc(100% - var(--v3-sidebar-hide-width));
 }
 
 // for mobile response 适配移动端
@@ -143,6 +164,10 @@ const handleClickOutside = () => {
   }
 
   .fixed-header {
+    width: 100%;
+  }
+
+  .fixed-footer {
     width: 100%;
   }
 }

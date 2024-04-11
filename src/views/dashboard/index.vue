@@ -1,5 +1,5 @@
 <script setup>
-import Echarts from "./components/Echarts.vue";
+import Echarts from "@/components/Echarts/index.vue";
 /** api/v1 */
 console.log(import.meta.env.VITE_BASE_API);
 </script>
@@ -11,7 +11,7 @@ console.log(import.meta.env.VITE_BASE_API);
 
 <style lang="scss">
 .chart {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
 }
 </style>

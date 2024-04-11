@@ -23,4 +23,7 @@
   --v3-sidebarlogo-bg-color: #001428;
   /** TagsView 组件 */
   --v3-tagsview-height: 34px;
+  /** Footer组件*/
+  --v3-footer-background-color: #fff;
+  --v3-footer-height: 45px;
 }
