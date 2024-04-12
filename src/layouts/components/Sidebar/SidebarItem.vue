@@ -4,6 +4,7 @@ import SidebarItemLink from "./SidebarItemLink.vue";
 import { isExternal } from "@/utils/validate";
 import path from "path-browserify";
 
+/** 清晰地指定组件所需的props*/
 const props = defineProps({
   item: {
     type: Object,
@@ -23,10 +24,11 @@ const props = defineProps({
   },
 });
 
-/** 是否始终显示根菜单 */
-const alwaysShowRootMenu = computed(() => {
-  return props.item.meta && props.item.meta.alwaysShow;
-});
+/** 是否始终显示权限根菜单 */
+// !alwaysShowRootMenu &&
+// const alwaysShowRootMenu = computed(() => {
+//   return props.item.meta && props.item.meta.alwaysShow;
+// });
 
 /** 显示的子菜单 */
 const showingChildNumber = computed(() => {
@@ -35,6 +37,7 @@ const showingChildNumber = computed(() => {
       return !(item.meta && item.meta.hidden);
     });
     return showingChildren.length;
+    console.log(showingChildren.length);
   }
   return 0;
 });
@@ -45,6 +48,7 @@ const theOnlyOneChild = computed(() => {
     return null;
   }
   if (props.item.children) {
+    /** for...of遍历router子菜单的对象*/
     for (const child of props.item.children) {
       if (!child.meta || !child.meta.hidden) {
         return child;
@@ -53,6 +57,10 @@ const theOnlyOneChild = computed(() => {
   }
   // If there is no children, return itself with path removed,
   // because this.basePath already contains item's path information
+  /** 
+    如果没有孩子，则返回自身并删除路径，
+    因为 this.basePath 已经包含项目的路径信息
+  */
   return { ...props.item, path: "" };
 });
 
@@ -76,9 +84,8 @@ const resolvePath = (routePath) => {
       'first-level': props.isFirstLevel,
     }"
   >
-    <template
-      v-if="!alwaysShowRootMenu && theOnlyOneChild && !theOnlyOneChild.children"
-    >
+    <!-- 始终显示首页 -->
+    <template v-if="theOnlyOneChild && !theOnlyOneChild.children">
       <SidebarItemLink
         v-if="theOnlyOneChild.meta"
         :to="resolvePath(theOnlyOneChild.path)"

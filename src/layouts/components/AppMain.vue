@@ -24,7 +24,7 @@ const key = computed(() => {
       </router-view>
     </div>
     <!-- 返回顶部 -->
-    <el-backtop />
+    <el-backtop :right="50" :bottom="50" />
   </section>
 </template>
 

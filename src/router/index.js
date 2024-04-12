@@ -31,23 +31,6 @@ export const constantRoutes = [
       hidden: true,
     },
   },
-  //403
-  {
-    path: "/403",
-    component: () => import("@/views/error-page/403.vue"),
-    meta: {
-      hidden: true,
-    },
-  },
-  //404
-  {
-    path: "/404",
-    component: () => import("@/views/error-page/404.vue"),
-    meta: {
-      hidden: true,
-    },
-    alias: "/:pathMatch(.*)*",
-  },
   //uncoss
   {
     path: "/unocss",
@@ -65,7 +48,7 @@ export const constantRoutes = [
       },
     ],
   },
-  //multi-level menu
+  //multi-level-menu 多级菜单
   {
     path: "/menu",
     component: Layout,
@@ -152,7 +135,7 @@ export const constantRoutes = [
       },
     ],
   },
-  //ExternalLinks
+  //ExternalLinks 外部链接
   {
     path: "/ExternalLinks",
     meta: {
@@ -192,7 +175,7 @@ export const constantRoutes = [
       },
     ],
   },
-  // ErrorPage
+  // ErrorPage 异常页
   {
     path: "/ErrorPage",
     meta: {
@@ -227,37 +210,39 @@ export const constantRoutes = [
 
 /** 权限页面路由*/
 export const asyncRoutes = [
-  {
-    path: "/permission",
-    component: Layout,
-    redirect: "/permission/page",
-    name: "Permission",
-    meta: {
-      title: "权限管理",
-      svgIcon: "lock",
-      roles: [1, 2, 3], // 可以在根路由中设置角色
-      alwaysShow: true, // 将始终显示根菜单
-    },
-    children: [
-      {
-        path: "page",
-        component: () => import("@/views/permission/page.vue"),
-        name: "PagePermission",
-        meta: {
-          title: "页面权限",
-          roles: [1], // 或者在子导航中设置角色
-        },
-      },
-      {
-        path: "directive",
-        component: () => import("@/views/permission/directive.vue"),
-        name: "DirectivePermission",
-        meta: {
-          title: "指令权限", // 如果未设置角色，则表示：该页面不需要权限，但会继承根路由的角色
-        },
-      },
-    ],
-  },
+  /** 权限页面路由*/
+  // {
+  //   path: "/permission",
+  //   component: Layout,
+  //   redirect: "/permission/page",
+  //   name: "Permission",
+  //   meta: {
+  //     title: "权限管理",
+  //     svgIcon: "lock",
+  //     roles: [1, 2, 3], // 可以在根路由中设置角色
+  //     alwaysShow: true, // 将始终显示根菜单
+  //   },
+  //   children: [
+  //     {
+  //       path: "page",
+  //       component: () => import("@/views/permission/page.vue"),
+  //       name: "PagePermission",
+  //       meta: {
+  //         title: "页面权限",
+  //         roles: [1], // 或者在子导航中设置角色
+  //       },
+  //     },
+  //     {
+  //       path: "directive",
+  //       component: () => import("@/views/permission/directive.vue"),
+  //       name: "DirectivePermission",
+  //       meta: {
+  //         title: "指令权限", // 如果未设置角色，则表示：该页面不需要权限，但会继承根路由的角色
+  //       },
+  //     },
+  //   ],
+  // },
+  /** 404*/
   {
     path: "/:pathMatch(.*)*", // Must put the 'ErrorPage' route at the end, 必须将 'ErrorPage' 路由放在最后
     redirect: "/404",

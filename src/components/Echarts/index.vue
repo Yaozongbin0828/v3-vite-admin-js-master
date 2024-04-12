@@ -370,18 +370,20 @@ const histogramOption = {
 </script>
 <template>
   <div class="echarts-container">
+    <!-- 1 -->
     <div class="echarts-container-item">
-      <el-card class="m-10 mr-5 card_skills" shadow="always">
+      <el-card class="m-5 mr-5 card_skills" shadow="always">
         <template #header>技术栈</template>
         <VChart :option="skillsOption" class="wh-full" autoresize />
       </el-card>
-      <el-card class="m-10 mr-5 card_histogram" shadow="always">
+      <el-card class="m-5 mr-5 card_histogram" shadow="always">
         <template #header>柱状图</template>
         <VChart :option="histogramOption" class="wh-full" autoresize />
       </el-card>
     </div>
+    <!-- 2 -->
     <div class="echarts-container-item">
-      <el-card class="m-10 card_trend" shadow="always">
+      <el-card class="m-5 mr-5 card_trend" shadow="always">
         <template #header>折线图</template>
         <VChart :option="trendOption" class="wh-full" autoresize />
       </el-card>
@@ -405,8 +407,9 @@ const histogramOption = {
     .card_histogram {
       flex: 2;
     }
-    .m-10 {
-      margin: 0 0 10px 0;
+
+    .m-5 {
+      margin: 0 0 5px 0;
     }
 
     .mr-5 {

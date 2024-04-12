@@ -21,6 +21,10 @@ console.log(" MIT © 2023-PRESENT @yaozongbin" + " " + VITE_APP_TITLE);
   color: #a1a4ab;
   background-color: var(--v3-footer-background-color);
 
+  a {
+    font-size: 14px;
+  }
+
   a:hover {
     color: rgba(0, 0, 0, 0.8);
     transition: all 0.5s;
