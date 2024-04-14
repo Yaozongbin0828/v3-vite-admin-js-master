@@ -64,14 +64,6 @@ const handleClickOutside = () => {
   width: 100%;
 }
 
-.showGreyMode {
-  filter: grayscale(1);
-}
-
-.showColorWeakness {
-  filter: invert(0.8);
-}
-
 .drawer-bg {
   background-color: #000;
   opacity: 0.3;

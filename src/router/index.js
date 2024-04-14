@@ -23,7 +23,7 @@ export const constantRoutes = [
       },
     ],
   },
-  //登录
+  /** 登录*/
   {
     path: "/login",
     component: () => import("@/views/login/index.vue"),
@@ -31,7 +31,7 @@ export const constantRoutes = [
       hidden: true,
     },
   },
-  //uncoss
+  /** uncoss*/
   {
     path: "/unocss",
     component: Layout,
@@ -48,7 +48,7 @@ export const constantRoutes = [
       },
     ],
   },
-  //multi-level-menu 多级菜单
+  /** multi-level-menu*/
   {
     path: "/menu",
     component: Layout,
@@ -135,7 +135,7 @@ export const constantRoutes = [
       },
     ],
   },
-  //ExternalLinks 外部链接
+  /** ExternalLinks 外部链接*/
   {
     path: "/ExternalLinks",
     meta: {
@@ -175,7 +175,7 @@ export const constantRoutes = [
       },
     ],
   },
-  // ErrorPage 异常页
+  /** ErrorPage 异常页*/
   {
     path: "/ErrorPage",
     meta: {
@@ -204,6 +204,23 @@ export const constantRoutes = [
         },
       },
       // 500
+    ],
+  },
+  //** about 关于*/
+  {
+    path: "/about",
+    component: Layout,
+    redirect: "/about/index",
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/about/index.vue"),
+        name: "about",
+        meta: {
+          title: "关于",
+          svgIcon: "about",
+        },
+      },
     ],
   },
 ];

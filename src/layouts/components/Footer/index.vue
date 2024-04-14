@@ -20,7 +20,8 @@ console.log(" MIT © 2023-PRESENT @yaozongbin" + " " + VITE_APP_TITLE);
   justify-content: center;
   color: #a1a4ab;
   background-color: var(--v3-footer-background-color);
-
+  box-shadow: 2px -2px 3px 0 rgba(0, 0, 0, 0.062745098),
+    0 0 3px 0 rgba(0, 0, 0, 0.062745098);
   a {
     font-size: 14px;
   }

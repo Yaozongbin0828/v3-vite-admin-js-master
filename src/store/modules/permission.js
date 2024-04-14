@@ -18,7 +18,6 @@ const hasPermission = (roles, route) => {
   }
 };
 
-
 const filterAsyncRoutes = (routes, roles) => {
   const res = [];
   routes.forEach((route) => {

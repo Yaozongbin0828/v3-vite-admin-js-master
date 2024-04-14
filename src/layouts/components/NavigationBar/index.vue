@@ -1,3 +1,40 @@
+<script setup>
+import { computed } from "vue";
+import { useRouter } from "vue-router";
+import { useAppStore } from "@/store/modules/app";
+import { UserFilled } from "@element-plus/icons-vue";
+import { useUserStore } from "@/store/modules/user";
+
+import Breadcrumb from "../Breadcrumb/index.vue";
+import Hamburger from "../Hamburger/index.vue";
+import Screenfull from "@/components/Screenfull/index.vue";
+import Notify from "@/components/Notify/index.vue";
+
+/** vite-svg-loader 插件的功能 svg转化为组件形式*/
+import Github from "@/icons/svg/github-nav.svg?component";
+import Gitee from "@/icons/svg/gitee-nav.svg?component";
+import Blog from "@/icons/svg/blog-nav.svg?component";
+import Logout from "@/icons/svg/logout.svg?component";
+
+const appStore = useAppStore();
+const userStore = useUserStore();
+const router = useRouter();
+
+const sidebar = computed(() => {
+  return appStore.sidebar;
+});
+
+/** Sidebar默认为false*/
+const toggleSidebar = () => {
+  appStore.toggleSidebar(false);
+};
+
+/** 退出登录返回到登录页面*/
+const logout = () => {
+  userStore.logout();
+  router.push("/login");
+};
+</script>
 <template>
   <div class="navigation-bar">
     <!-- 隐藏/显示按钮 -->
@@ -24,16 +61,19 @@
         <template #dropdown>
           <el-dropdown-menu>
             <a target="_blank" href="https://yaozongbin.gitee.io/yaozongbin/">
-              <el-dropdown-item>个人博客</el-dropdown-item>
+              <el-dropdown-item><Blog /> &nbsp;博客</el-dropdown-item>
             </a>
             <a target="_blank" href="https://github.com/yaozongbin">
-              <el-dropdown-item> github </el-dropdown-item>
+              <el-dropdown-item><Github /> &nbsp;Github </el-dropdown-item>
             </a>
             <a target="_blank" href="https://gitee.com/yaozongbin">
-              <el-dropdown-item> Gitee </el-dropdown-item>
+              <el-dropdown-item><Gitee /> &nbsp;Gitee </el-dropdown-item>
             </a>
             <el-dropdown-item divided @click="logout">
-              <span style="display: block">退出登录</span>
+              <span style="display: block">
+                <Logout style="vertical-align: middle; margin: 0 0 3px 0" />
+                退出登录
+              </span>
             </el-dropdown-item>
           </el-dropdown-menu>
         </template>
@@ -42,37 +82,6 @@
   </div>
 </template>
 
-<script setup>
-import { computed } from "vue";
-import { useRouter } from "vue-router";
-import { useAppStore } from "@/store/modules/app";
-import { UserFilled } from "@element-plus/icons-vue";
-import { useUserStore } from "@/store/modules/user";
-
-import Breadcrumb from "../Breadcrumb/index.vue";
-import Hamburger from "../Hamburger/index.vue";
-import Screenfull from "@/components/Screenfull/index.vue";
-import Notify from "@/components/Notify/index.vue";
-
-const appStore = useAppStore();
-const userStore = useUserStore();
-const router = useRouter();
-
-const sidebar = computed(() => {
-  return appStore.sidebar;
-});
-
-/** Sidebar默认为false*/
-const toggleSidebar = () => {
-  appStore.toggleSidebar(false);
-};
-
-/** 退出登录返回到登录页面*/
-const logout = () => {
-  userStore.logout();
-  router.push("/login");
-};
-</script>
 <style scoped lang="scss">
 .navigation-bar {
   height: var(--v3-navigationbar-height);
@@ -113,6 +122,7 @@ const logout = () => {
       .right-menu-avatar {
         display: flex;
         align-items: center;
+
         .svg-icon {
           font-size: 20px;
         }
