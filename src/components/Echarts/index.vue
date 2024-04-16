@@ -370,7 +370,7 @@ const histogramOption = {
 </script>
 <template>
   <div class="echarts-container">
-    <!-- 1 -->
+
     <div class="echarts-container-item">
       <el-card class="m-5 mr-5 card_skills">
         <template #header>技术栈</template>
@@ -381,7 +381,7 @@ const histogramOption = {
         <VChart :option="histogramOption" class="wh-full" autoresize />
       </el-card>
     </div>
-    <!-- 2 -->
+
     <div class="echarts-container-item">
       <el-card class="m-5 mr-5 card_trend">
         <template #header>折线图</template>

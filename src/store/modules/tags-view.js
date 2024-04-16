@@ -7,15 +7,14 @@ export const useTagsViewStore = defineStore("tags-view", () => {
   /** 缓存Views*/
   const cachedViews = ref([]);
 
+  //#region add
   const addVisitedView = (view) => {
     if (
       visitedViews.value.some((v, index) => {
         if (v.path === view.path) {
-          /** 防止 query 参数丢失 */
           if (v.fullPath !== view.fullPath) {
-            /** 浅拷贝value值*/
+            // 防止 query 参数丢失
             visitedViews.value[index] = Object.assign({}, view);
-            console.log(visitedViews.value[index]);
           }
           return true;
         }
@@ -23,11 +22,22 @@ export const useTagsViewStore = defineStore("tags-view", () => {
     ) {
       return;
     }
-    /** 增添tags*/
     visitedViews.value.push(Object.assign({}, view));
   };
 
+  const addCachedView = (view) => {
+    if (typeof view.name !== "string") return;
+    if (cachedViews.value.includes(view.name)) return;
+    if (view.meta?.keepAlive) {
+      cachedViews.value.push(view.name);
+    }
+  };
+  //#endregion
+
   return {
+    visitedViews,
+    cachedViews,
     addVisitedView,
+    addCachedView,
   };
 });

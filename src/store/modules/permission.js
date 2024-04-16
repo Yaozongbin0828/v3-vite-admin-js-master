@@ -32,6 +32,7 @@ const filterAsyncRoutes = (routes, roles) => {
   return res;
 };
 
+/** 配合tag标签页使用*/
 export const usePermissionStore = defineStore("permission", () => {
   const routes = ref([]);
   const dynamicRoutes = ref([]);

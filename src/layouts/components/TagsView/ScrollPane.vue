@@ -6,6 +6,16 @@ import { computed, ref, watch, nextTick } from "vue";
 import { useSettingsStore } from "@/store/modules/settings";
 import Screenfull from "@/components/Screenfull/index.vue";
 
+const props = defineProps({
+  tagRefs: {
+    type: Object,
+    required: true,
+  },
+});
+
+const scrollbarRef = ref();
+const scrollbarContentRef = ref();
+
 // const route = useRoute();
 const settingsStore = useSettingsStore();
 
@@ -14,7 +24,12 @@ const showScreenfull = computed(() => {
 });
 </script>
 <template>
-  <div class="tags-view-container">
+  <div class="scroll-container">
+    <!-- 标签页 -->
+    <div ref="scrollbarContentRef" class="scrollbar-content">
+      <slot />
+    </div>
+
     <Screenfull
       v-if="showScreenfull"
       element=".app-main"
@@ -25,12 +40,15 @@ const showScreenfull = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-.tags-view-container {
-  height: var(--v3-tagsview-height);
-  width: 100%;
-  background-color: #fff;
-  border-bottom: 1px solid #d8dce5;
-  box-shadow: 0 1px 3px 0 #00000010, 0 0 3px 0 #00000010;
+.scroll-container {
+  height: 100%;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+
+  .scrollbar-content {
+    display: inline-block;
+  }
 
   .screenfull {
     width: 40px;

@@ -14,7 +14,10 @@ console.log(import.meta.env.VITE_BASE_API);
         <template #header
           >🇨🇳&nbsp;Hello,I'm&nbsp;{{ userStore.username }}😎</template
         >
-        <p>🔥 基于 Vue3 + Vite + Pinia + Sass + Echarts + ElmentPlus UI 的轻量级后台管理模板 🔥</p>
+        <p>
+          🔥 基于 Vue3 + Vite + Pinia + Sass + Echarts + ElmentPlus UI
+          的轻量级后台管理模板 🔥
+        </p>
       </el-card>
       <el-card class="card_right m-5 mr-5">
         <template #header>⚡ 项目地址 ⚡</template>
@@ -22,7 +25,8 @@ console.log(import.meta.env.VITE_BASE_API);
           <el-button type="primary">
             <a
               class="primary"
-              href="https://github.com/yaozongbin/v3-vite-admin-js-master"huo
+              href="https://github.com/yaozongbin/v3-vite-admin-js-master"
+              huo
               >项目源码
             </a>
           </el-button>
@@ -53,13 +57,10 @@ console.log(import.meta.env.VITE_BASE_API);
     align-items: center;
     .card_left {
       flex: 2;
-      min-height: 100%;
-      width: 100%;
     }
+
     .card_right {
       flex: 1;
-      min-height: 100%;
-      width: 100%;
 
       .el-card__body {
         padding: 14.5px !important;
@@ -75,7 +76,7 @@ console.log(import.meta.env.VITE_BASE_API);
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1200px) {
     .dashaboard-container-item {
       display: block;
     }
