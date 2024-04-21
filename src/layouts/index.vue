@@ -30,6 +30,7 @@ const fixedHeader = computed(() => {
 const fixedFooter = computed(() => {
   return settingsStore.fixedHeader;
 });
+
 const handleClickOutside = () => {
   appStore.closeSidebar(false);
 };

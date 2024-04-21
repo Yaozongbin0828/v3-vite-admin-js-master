@@ -66,6 +66,7 @@ export default defineConfig({
   resolve: {
     //配置路径别名@
     alias: {
+      "~": path.resolve(__dirname, "./"),
       "@": path.resolve(__dirname, "./src"),
     },
     //自动补全的文件扩展名列表

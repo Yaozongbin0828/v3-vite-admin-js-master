@@ -370,7 +370,6 @@ const histogramOption = {
 </script>
 <template>
   <div class="echarts-container">
-
     <div class="echarts-container-item">
       <el-card class="m-5 mr-5 card_skills">
         <template #header>技术栈</template>
