@@ -22,8 +22,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="dependency-container">
-    <el-card class="dependency-item">
-      <template #header>开发依赖</template>
+    <el-card class="dependency-item" header="开发依赖">
       <div class="dependencies-table-wrrpper">
         <table class="descriptions-table">
           <tr
@@ -67,7 +66,6 @@ onMounted(() => {
         text-indent: 0;
 
         .descriptions-tr {
-
           .dependency-name {
             text-align: left;
             color: black;

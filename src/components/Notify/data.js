@@ -4,7 +4,8 @@ export const notifyData = [
       "https://gw.alipayobjects.com/zos/rmsportal/OKJXDXrmkNshAMvwtvhu.png",
     title: "Notify组件完成",
     datetime: "一个月前",
-    description: "mock数据配合el-card遍历挂载到页面上去,使用Vue的computed钩子函数计算角标值,以组件方式引入ElementPlus@icon里的图标。",
+    description:
+      "mock数据配合el-card遍历挂载到页面上去,使用Vue的computed钩子函数计算角标值,以组件方式引入ElementPlus@icon里的图标。",
   },
   {
     avatar:

@@ -145,7 +145,7 @@ export const constantRoutes = [
     children: [
       //Blog
       {
-        path: "https://yaozongbin.gitee.io/",
+        path: "https://yaozongbin.zeabur.app/",
         component: () => {},
         name: "ExternalLink1",
         meta: {

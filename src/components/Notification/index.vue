@@ -15,7 +15,7 @@ const showElNotification = () => {
     type: "success",
     dangerouslyUseHTMLString: true,
     message:
-      "<p>项目还在完善中,可以先看看以下作品!<a style='color: teal' target='_blank' href='https://yaozongbin.gitee.io/'>个人博客</a> <a style='color: teal' target='_blank' href='https://yaozongbiniphone14pro.zeabur.app/'>灵动岛</a> </p>",
+      "<p>项目还在完善中,可以先看看以下作品!<a style='color: teal' target='_blank' href='https://yaozongbin.zeabur.app/'>个人博客</a> <a style='color: teal' target='_blank' href='https://yaozongbiniphone14pro.zeabur.app/'>灵动岛</a> </p>",
     duration: 0,
     position: "bottom-right",
   });

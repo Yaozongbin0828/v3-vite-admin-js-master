@@ -60,7 +60,7 @@ const logout = () => {
         </div>
         <template #dropdown>
           <el-dropdown-menu>
-            <a target="_blank" href="https://yaozongbin.gitee.io/yaozongbin/">
+            <a target="_blank" href="https://yaozongbin.zeabur.app">
               <el-dropdown-item><Blog /> &nbsp;博客</el-dropdown-item>
             </a>
             <a target="_blank" href="https://github.com/yaozongbin">

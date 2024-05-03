@@ -19,8 +19,7 @@ console.log(import.meta.env.VITE_BASE_API);
           的轻量级后台管理模板 🔥
         </p>
       </el-card>
-      <el-card class="card_right m-5 mr-5">
-        <template #header>⚡ 项目地址 ⚡</template>
+      <el-card class="card_right m-5 mr-5" header="⚡ 项目地址 ⚡">
         <p>
           <el-button type="primary">
             <a
