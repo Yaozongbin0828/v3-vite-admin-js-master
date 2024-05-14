@@ -32,7 +32,7 @@ console.log(import.meta.env.VITE_BASE_API);
           <el-button type="primary" plain>
             <a
               class="primary-plain"
-              href="https://yaozongbin.gitee.io/yaozongbin/categories/Vue/1/"
+              href="https://yaozongbin.pages.dev/categories/Vue/1/"
               >教程文档
             </a>
           </el-button>

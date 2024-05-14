@@ -145,7 +145,7 @@ export const constantRoutes = [
     children: [
       //Blog
       {
-        path: "https://yaozongbin.zeabur.app/",
+        path: "https://yaozongbin.pages.dev/",
         component: () => {},
         name: "ExternalLink1",
         meta: {
